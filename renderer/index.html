@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunter's Codex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/theme.css" />
+</head>
+<body>
+  <div id="app">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">Hunter's<br/>Codex</h1>
+        <span class="subtitle">Monster Hunter Wilds</span>
+      </div>
+      <ul class="nav-tabs">
+        <li class="nav-item active" data-tab="monsters">
+          <img class="nav-icon" src="../assets/icons/monsters/Rathalos.png" alt="monsters" onerror="this.style.display='none'" />
+          <span>Monstres</span>
+        </li>
+        <li class="nav-item" data-tab="weapons">
+          <img class="nav-icon" src="../assets/icons/weapons/great-sword.svg" alt="weapons" onerror="this.style.display='none'" />
+          <span>Armes</span>
+        </li>
+        <li class="nav-item" data-tab="equipment">
+          <img class="nav-icon" src="../assets/icons/armor/set.svg" alt="equipment" onerror="this.style.display='none'" />
+          <span>Equipements</span>
+        </li>
+        <li class="nav-item" data-tab="skills">
+          <img class="nav-icon" src="../assets/icons/decorations/decoration.svg" alt="skilss" onerror="this.style.display='none'" />
+          <span>Talents</span>
+        </li>
+        <li class="nav-item" data-tab="locations">
+          <img class="nav-icon" src="../assets/icons/locations/Wounded-Hollow.png" alt="locations" onerror="this.style.display='none'" />
+          <span>Lieux</span>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <select id="locale-select">
+          <option value="fr">Fran&ccedil;ais</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Espa&ntilde;ol</option>
+        </select>
+      </div>
+    </nav>
+    <main id="content">
+      <div id="list-view">
+        <div class="page-header">
+          <h2 id="page-title">Monstres</h2>
+          <div class="search-wrapper">
+            <input type="text" id="search-input" placeholder="Rechercher..." />
+          </div>
+        </div>
+        <div id="sub-tabs" class="sub-tabs hidden"></div>
+        <div id="card-grid" class="card-grid"></div>
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <span>Chargement...</span>
+        </div>
+        <div id="error-msg" class="error-msg hidden"></div>
+      </div>
+      <div id="detail-view" class="hidden">
+        <button id="back-btn" class="back-btn">&larr; Retour</button>
+        <div id="detail-content"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts : ordre important (dépendances d'abord, app en dernier) -->
+  <script src="constants.js"></script>
+  <script src="api.js"></script>
+  <script src="helpers.js"></script>
+  <script src="tabs/monsters.js"></script>
+  <script src="tabs/weapons.js"></script>
+  <script src="tabs/equipment.js"></script>
+  <script src="tabs/skills.js"></script>
+  <script src="tabs/locations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

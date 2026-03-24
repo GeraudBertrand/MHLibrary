@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vite-dev",
+      "runtimeExecutable": "npx.cmd",
+      "runtimeArgs": ["electron-vite", "dev", "--no-sandbox"],
+      "port": 5173
+    }
+  ]
+}

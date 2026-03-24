@@ -1,0 +1,19 @@
+appId: com.mhlibrary.wilds
+productName: "Hunter's Codex"
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - main.js
+  - preload.js
+  - renderer/**
+  - assets/**
+  - package.json
+forceCodeSigning: false
+win:
+  target:
+    - target: portable
+      arch: [x64]
+    - target: dir
+      arch: [x64]
+  signAndEditExecutable: false
